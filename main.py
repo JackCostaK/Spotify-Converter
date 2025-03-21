@@ -73,13 +73,12 @@ def get_URL(title):
 def download_song(url):
 
     URL = "https://www.youtube.com" + url
-    print(FFMPEG_LOCATION)
+    
     ydl_opts = {
 
-        'ffmpeg_location':os.path.realpath(FFMPEG_LOCATION),
         'format': 'bestaudio/best',
 
-        'postprocessors': [{  # Extract audio using ffmpeg
+        'postprocessors': [{  
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
@@ -98,13 +97,9 @@ if __name__ == "__main__":
 
     
 
-    #ADD FFMPEG PATH
-    FFMPEG_LOCATION = ""
+   
 
     URL = input("Provide Playlist URL: ")
-    if FFMPEG_LOCATION == "":
-        FFMPEG_LOCATION = input("Provide PATH for ffmpeg.exe: ")
-    
     client_id = input("Provide client id: ")
     client_secret = input("Provide client secret: ")
 
