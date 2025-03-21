@@ -1,2 +1,2 @@
 # Spotify-Converter
-Transfers Spotify Playlists to YouTube
+Transfers Spotify Playlists to mp3
