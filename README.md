@@ -1,5 +1,5 @@
 # Spotify-Converter
-Transfers Spotify Playlists to mp3
+Transfers Spotify Playlists to mp3 files
 
 ## How To Use
 
