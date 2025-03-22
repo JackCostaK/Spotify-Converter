@@ -86,7 +86,6 @@ def download_song(url, playlist_id):
     URL = "https://www.youtube.com" + url
     
     playlist_title = get_playlist_title(token, playlist_id)
-    print(playlist_title)
 
     ydl_opts = {
 
