@@ -64,6 +64,8 @@ python main.py
 ```
 If this doesn't work try replacing `python` with `python3`
 
+You will now have a folder in your root directory with the same name as the spotify playlist. This folder will contain all the mp3s.
+
 Enjoy!
 
 
