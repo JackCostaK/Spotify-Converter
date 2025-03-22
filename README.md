@@ -1,5 +1,5 @@
 # Spotify-Converter
-Transfers Spotify Playlists to mp3
+Converts Spotify Playlists to mp3 files
 
 ## How To Use
 
@@ -22,6 +22,8 @@ Run this command in your terminal to install the packages you will need
 ```bash
 pip install dotenv && pip install requests && pip install yt_dlp && pip install youtube_search
 ```
+If this doesn't work try replacing `pip` with `pip3`
+
 ### 3. Download FFMPEG
 You will need to download FFMPEG and move into your Python Script directory
 
@@ -58,8 +60,9 @@ Copy the URL of the Playlist you want to download. The entire URL will look some
 ### 6. Run the Program
 Final to run the program simply run this in your terminal session
 ```bash
-python3 main.py
+python main.py
 ```
+If this doesn't work try replacing `python` with `python3`
 
 Enjoy!
 
