@@ -40,6 +40,17 @@ def get_auth_header(token):
     return {"Authorization" : "Bearer " + token}
 
 
+def get_playlist_title(token, playlist_id):
+
+    url = "https://api.spotify.com/v1/playlists/" + playlist_id
+    headers = get_auth_header(token)
+
+    result = get(url, headers=headers)
+
+    json_result = json.loads(result.content)
+
+    return json_result["name"]
+
 def get_playlist_songs(token, playlist_id):
     songs = []
 
@@ -70,13 +81,17 @@ def get_URL(title):
     return url_suffix
 
 
-def download_song(url):
+def download_song(url, playlist_id):
 
     URL = "https://www.youtube.com" + url
     
+    playlist_title = get_playlist_title(token, playlist_id)
+    print(playlist_title)
+
     ydl_opts = {
 
         'format': 'bestaudio/best',
+        'outtmpl': f'{playlist_title}/%(title)s',
 
         'postprocessors': [{  
             'key': 'FFmpegExtractAudio',
@@ -99,19 +114,19 @@ if __name__ == "__main__":
 
    
 
-    URL = input("Provide Playlist URL: ")
+    playlist_id = input("Provide Playlist ID: ")
     client_id = input("Provide client id: ")
     client_secret = input("Provide client secret: ")
 
     token = get_token()
     
 
-    track_list = get_playlist_songs(token, URL )
+    track_list = get_playlist_songs(token, playlist_id)
     
 
 
     for i in range(0, len(track_list)):
-        download_song(track_list[i][0])
+        download_song(track_list[i][0], playlist_id)
         print(
         f"""
         
